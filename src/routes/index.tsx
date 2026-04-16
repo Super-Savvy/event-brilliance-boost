@@ -312,7 +312,7 @@ function Home() {
 
           <div className="grid gap-5 md:grid-cols-3">
             {upcoming.map((u) => (
-              <div key={u.date} className="flex items-center gap-5 rounded-2xl bg-card p-5 shadow-soft">
+              <div key={u.day + u.month} className="flex items-center gap-5 rounded-2xl bg-card p-5 shadow-soft">
                 <div className="flex h-20 w-20 flex-none flex-col items-center justify-center rounded-2xl bg-gradient-gold text-gold-foreground">
                   <span className="font-display text-2xl font-bold leading-none">{u.day}</span>
                   <span className="mt-1 text-xs uppercase tracking-wide">{u.month}</span>
