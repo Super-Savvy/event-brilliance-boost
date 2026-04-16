@@ -72,8 +72,66 @@ const en: Dict = {
   "contact.address": "Address",
   "contact.phoneLabel": "Phone",
 
-  "footer.tag": "Your celebration. Our beautiful space.",
+  "footer.tag": "Your celebration. Our beautiful space. Mesquite's favorite ballroom for weddings, quinceañeras, birthdays and corporate gatherings.",
   "footer.rights": "All rights reserved.",
+  "footer.menu": "Menu",
+  "footer.services": "Services",
+  "footer.contact": "Contact Us",
+  "footer.follow": "Follow Us",
+  "footer.newsletter": "Newsletter",
+  "footer.newsletterSub": "Be the first to hear about open dates, seasonal specials and new packages.",
+  "footer.emailPh": "Your email address",
+  "footer.subscribe": "Subscribe",
+
+  "strip.tag": "Trusted by 100+ Mesquite families since 2018",
+
+  "intro.eyebrow": "About the Venue",
+  "intro.title": "Mesquite Event Center is the area's most-loved ballroom",
+  "intro.body":
+    "Just minutes from downtown Dallas, our newly renovated ballroom blends warm hospitality with a polished, photo-ready space. Whether you're planning a fairytale quinceañera, a heartfelt wedding, or a corporate mixer, our team makes every detail effortless — from setup to send-off.",
+  "intro.body2":
+    "Spotless floors. Bright chandeliers. Late-night-ready. We treat your event like our own.",
+  "intro.cta": "Read More",
+
+  "intro2.eyebrow": "Why Couples & Families Choose Us",
+  "intro2.title": "A celebration space that truly feels like yours",
+  "intro2.body":
+    "From intimate gatherings to 150-guest galas, our flexible floor plan, generous parking, and bilingual on-site team make hosting a breeze. We're proud to be the venue families come back to year after year.",
+
+  "services.eyebrow": "What We Offer",
+  "services.title": "Our Services",
+  "services.sub": "Everything you need under one roof — book the space, we'll handle the details.",
+  "services.s1.t": "Full Ballroom Rental",
+  "services.s1.d": "Up to 150 guests, dance floor, stage area & elegant lighting included.",
+  "services.s1.cta": "Learn More",
+  "services.s2.t": "Weddings & Receptions",
+  "services.s2.d": "A romantic, photo-ready setting for your big day — ceremony or reception.",
+  "services.s3.t": "Quinceañeras & Sweet 16s",
+  "services.s3.d": "Late-night-friendly with the wow factor your celebration deserves.",
+  "services.s4.t": "Corporate & Banquets",
+  "services.s4.d": "Professional setup for meetings, mixers, banquets and holiday parties.",
+  "services.s5.t": "Decor & Setup Friendly",
+  "services.s5.d": "Bring your own vendors or work with our trusted local partners.",
+  "services.s6.t": "Bilingual Booking",
+  "services.s6.d": "English & Spanish service from booking through event day.",
+
+  "book.eyebrow": "Reserve Your Date",
+  "book.title": "The Ballroom is Yours",
+  "book.sub": "Tell us about your event and we'll get back to you the same business day.",
+  "book.name": "Full Name",
+  "book.phone": "Phone Number",
+  "book.date": "Event Date",
+  "book.guests": "Guests",
+  "book.type": "Event Type",
+  "book.submit": "Book a Tour",
+
+  "testi.eyebrow": "Testimonials",
+  "testi.title": "What People Say",
+
+  "events2.eyebrow": "Don't Miss",
+  "events2.title": "Upcoming Available Dates",
+  "events2.sub": "These weekends are still open — first come, first reserved.",
+  "events2.viewAll": "View Calendar",
 };
 
 const es: Dict = {
@@ -144,8 +202,66 @@ const es: Dict = {
   "contact.address": "Dirección",
   "contact.phoneLabel": "Teléfono",
 
-  "footer.tag": "Tu celebración. Nuestro hermoso espacio.",
+  "footer.tag": "Tu celebración. Nuestro hermoso espacio. El salón favorito de Mesquite para bodas, quinceañeras, cumpleaños y eventos corporativos.",
   "footer.rights": "Todos los derechos reservados.",
+  "footer.menu": "Menú",
+  "footer.services": "Servicios",
+  "footer.contact": "Contacto",
+  "footer.follow": "Síguenos",
+  "footer.newsletter": "Boletín",
+  "footer.newsletterSub": "Entérate primero de fechas disponibles, ofertas y nuevos paquetes.",
+  "footer.emailPh": "Tu correo electrónico",
+  "footer.subscribe": "Suscribirme",
+
+  "strip.tag": "Más de 100 familias de Mesquite confían en nosotros desde 2018",
+
+  "intro.eyebrow": "Sobre el salón",
+  "intro.title": "Mesquite Event Center es el salón más querido del área",
+  "intro.body":
+    "A minutos del centro de Dallas, nuestro salón recién renovado combina la hospitalidad cálida con un espacio elegante, listo para fotos. Sea una quinceañera de cuento, una boda íntima o un evento corporativo, nuestro equipo hace que cada detalle sea fácil.",
+  "intro.body2":
+    "Pisos impecables. Lámparas brillantes. Listo para celebrar hasta tarde. Tu evento lo tratamos como propio.",
+  "intro.cta": "Leer más",
+
+  "intro2.eyebrow": "Por qué nos eligen",
+  "intro2.title": "Un espacio de celebración que se siente tuyo",
+  "intro2.body":
+    "Desde reuniones íntimas hasta galas de 150 invitados, nuestro plano flexible, amplio estacionamiento y equipo bilingüe en sitio hacen todo más fácil. Somos el salón al que las familias regresan año tras año.",
+
+  "services.eyebrow": "Lo que ofrecemos",
+  "services.title": "Nuestros Servicios",
+  "services.sub": "Todo lo que necesitas en un solo lugar — reserva el espacio, nosotros nos encargamos.",
+  "services.s1.t": "Renta completa del salón",
+  "services.s1.d": "Hasta 150 invitados, pista de baile, escenario e iluminación elegante incluida.",
+  "services.s1.cta": "Saber más",
+  "services.s2.t": "Bodas y recepciones",
+  "services.s2.d": "Un escenario romántico y listo para fotos en tu gran día.",
+  "services.s3.t": "Quinceañeras y Sweet 16",
+  "services.s3.d": "Hasta tarde y con el factor wow que tu celebración merece.",
+  "services.s4.t": "Corporativo y banquetes",
+  "services.s4.d": "Montaje profesional para juntas, banquetes y fiestas de fin de año.",
+  "services.s5.t": "Decoración flexible",
+  "services.s5.d": "Trae tus proveedores o trabaja con nuestros aliados locales de confianza.",
+  "services.s6.t": "Reservas bilingües",
+  "services.s6.d": "Atención en inglés y español desde la reserva hasta el evento.",
+
+  "book.eyebrow": "Aparta tu fecha",
+  "book.title": "El salón es tuyo",
+  "book.sub": "Cuéntanos sobre tu evento y te respondemos el mismo día hábil.",
+  "book.name": "Nombre completo",
+  "book.phone": "Teléfono",
+  "book.date": "Fecha del evento",
+  "book.guests": "Invitados",
+  "book.type": "Tipo de evento",
+  "book.submit": "Agendar visita",
+
+  "testi.eyebrow": "Testimonios",
+  "testi.title": "Lo que dicen",
+
+  "events2.eyebrow": "No te lo pierdas",
+  "events2.title": "Próximas fechas disponibles",
+  "events2.sub": "Estos fines de semana están abiertos — primero en llegar, primero en reservar.",
+  "events2.viewAll": "Ver calendario",
 };
 
 const dicts: Record<Lang, Dict> = { en, es };
