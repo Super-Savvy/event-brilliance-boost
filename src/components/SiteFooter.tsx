@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Facebook, Instagram, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, ArrowRight, Star } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 export function SiteFooter() {
@@ -94,20 +94,34 @@ export function SiteFooter() {
             <h4 className="mb-4 font-display text-base font-semibold">{t("footer.follow")}</h4>
             <div className="flex gap-2">
               <a
-                href="#"
+                href="https://www.google.com/maps/place/?q=place_id:ChIJ_____Mesquite+Event+Center"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Reviews"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-background/10 transition hover:bg-gold hover:text-gold-foreground"
+              >
+                <Star className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-background/10 transition hover:bg-gold hover:text-gold-foreground"
               >
                 <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-background/10 transition hover:bg-gold hover:text-gold-foreground"
               >
                 <Instagram className="h-4 w-4" />
               </a>
             </div>
+            <p className="mt-3 text-xs text-background/60">Tip: Replace these links with your real social pages.</p>
           </div>
         </div>
       </div>

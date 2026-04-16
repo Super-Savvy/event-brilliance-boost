@@ -10,7 +10,6 @@ import {
   Mail,
   Clock,
   Check,
-  PlayCircle,
   CalendarDays,
   Users,
   Sparkles,
@@ -66,7 +65,7 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-hero" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 py-28 text-center sm:px-6 md:py-40">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 sm:py-28 md:py-40">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-white backdrop-blur">
             <MapPin className="h-3.5 w-3.5" /> {t("hero.eyebrow")}
           </span>
@@ -172,13 +171,6 @@ function Home() {
             <div className="overflow-hidden rounded-3xl shadow-soft">
               <img src={holiday} alt="Guests celebrating at the venue" className="aspect-[5/4] w-full object-cover" />
             </div>
-            <button
-              type="button"
-              className="absolute inset-0 flex items-center justify-center text-white transition hover:scale-105"
-              aria-label="Play"
-            >
-              <PlayCircle className="h-20 w-20 drop-shadow-lg" />
-            </button>
           </div>
           <div className="order-1 md:order-2">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
@@ -385,6 +377,7 @@ function ServiceCard({
 function QuickBookForm() {
   const { t } = useI18n();
   const [data, setData] = useState({ name: "", phone: "", date: "", guests: "", type: "" });
+  const [sent, setSent] = useState(false);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -393,6 +386,7 @@ function QuickBookForm() {
       `Name: ${data.name}\nPhone: ${data.phone}\nDate: ${data.date}\nGuests: ${data.guests}\nType: ${data.type}`,
     );
     window.location.href = `mailto:info@mesquiteeventcenter.com?subject=${subject}&body=${body}`;
+    setSent(true);
   };
 
   const input =
@@ -456,6 +450,11 @@ function QuickBookForm() {
       <p className="mt-3 flex items-center justify-center gap-2 text-xs text-white/85">
         <Mail className="h-3.5 w-3.5" /> Same-business-day reply
       </p>
+      {sent && (
+        <p className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-white/15 px-3 py-2 text-xs text-white">
+          <Check className="h-3.5 w-3.5" /> Thanks! Your email app should now open with your request.
+        </p>
+      )}
     </form>
   );
 }
@@ -473,8 +472,24 @@ const testimonials = [
   },
 ];
 
-const upcoming = [
-  { day: "27", month: "Jun", label: "Saturday • Evening", title: "Open weekend slot" },
-  { day: "12", month: "Jul", label: "Saturday • All day", title: "Open weekend slot" },
-  { day: "09", month: "Aug", label: "Saturday • Evening", title: "Open weekend slot" },
-];
+function getUpcomingSaturdays(count: number) {
+  const out: { day: string; month: string; label: string; title: string }[] = [];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const labels = ["Saturday • Evening", "Saturday • All day", "Saturday • Evening"];
+  const d = new Date();
+  // Move to next Saturday (skip today if it's already Saturday)
+  d.setDate(d.getDate() + ((6 - d.getDay() + 7) % 7 || 7));
+  // Skip a few weeks ahead so dates feel "available but soon"
+  d.setDate(d.getDate() + 14);
+  for (let i = 0; i < count; i++) {
+    out.push({
+      day: String(d.getDate()).padStart(2, "0"),
+      month: months[d.getMonth()],
+      label: labels[i % labels.length],
+      title: "Open weekend slot",
+    });
+    d.setDate(d.getDate() + 21);
+  }
+  return out;
+}
+const upcoming = getUpcomingSaturdays(3);
