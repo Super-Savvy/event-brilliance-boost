@@ -3,10 +3,13 @@ import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 import { Star, MapPin, Sparkles, Car, Moon, Languages, CreditCard, ShieldCheck, ArrowRight, Phone } from "lucide-react";
 import heroImg from "@/assets/hero-ballroom.jpg";
-import wedding from "@/assets/event-wedding.jpg";
-import quince from "@/assets/event-quince.jpg";
-import birthday from "@/assets/event-birthday.jpg";
-import corporate from "@/assets/event-corporate.jpg";
+import wedding from "@/assets/real-sweetheart-table.jpg";
+import quince from "@/assets/real-quince-dress.jpg";
+import birthday from "@/assets/real-party-lights.jpg";
+import corporate from "@/assets/real-banquet-guests.jpg";
+import alice from "@/assets/real-alice-cake.jpg";
+import holiday from "@/assets/real-holiday-party.jpg";
+import treats from "@/assets/real-treats-pretzels.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
