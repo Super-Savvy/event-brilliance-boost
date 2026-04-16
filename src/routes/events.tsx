@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
-import wedding from "@/assets/event-wedding.jpg";
-import quince from "@/assets/event-quince.jpg";
-import birthday from "@/assets/event-birthday.jpg";
-import corporate from "@/assets/event-corporate.jpg";
-import baptism from "@/assets/event-baptism.jpg";
-import sweet16 from "@/assets/event-sweet16.jpg";
+import sweetheart from "@/assets/real-sweetheart-table.jpg";
+import quinceDress from "@/assets/real-quince-dress.jpg";
+import partyLights from "@/assets/real-party-lights.jpg";
+import aliceCake from "@/assets/real-alice-cake.jpg";
+import holidayParty from "@/assets/real-holiday-party.jpg";
+import banquet from "@/assets/real-banquet-guests.jpg";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -18,9 +18,9 @@ export const Route = createFileRoute("/events")({
           "Weddings, quinceañeras, sweet sixteens, birthdays, baptisms and corporate events in Mesquite, TX. Up to 150 guests, late-night friendly, free parking.",
       },
       { property: "og:title", content: "Events We Host | Mesquite Event Center" },
-      { property: "og:description", content: "Weddings, quinceañeras, birthdays, baptisms & corporate events." },
-      { property: "og:image", content: wedding },
-      { name: "twitter:image", content: wedding },
+      { property: "og:description", content: "Weddings, quinceañeras, birthdays & corporate events." },
+      { property: "og:image", content: quinceDress },
+      { name: "twitter:image", content: quinceDress },
     ],
   }),
   component: EventsPage,
@@ -30,12 +30,42 @@ function EventsPage() {
   const { t } = useI18n();
 
   const items = [
-    { img: wedding, name: "Weddings", es: "Bodas", desc: "Romantic, spacious receptions with a beautiful dance floor and stage." },
-    { img: quince, name: "Quinceañeras", es: "Quinceañeras", desc: "Make her dream debut unforgettable in our elegant ballroom." },
-    { img: sweet16, name: "Sweet Sixteens", es: "Sweet Sixteen", desc: "Lights, music, and room to dance — perfect for the big 16." },
-    { img: birthday, name: "Birthday Parties", es: "Cumpleaños", desc: "From milestone birthdays to family fiestas, we set the scene." },
-    { img: baptism, name: "Baptisms & Communions", es: "Bautizos", desc: "An intimate, beautiful space for life's sacred moments." },
-    { img: corporate, name: "Corporate & Banquets", es: "Eventos corporativos", desc: "Meetings, banquets, and company celebrations with style." },
+    {
+      img: sweetheart,
+      name: "Weddings",
+      es: "Bodas",
+      desc: "Romantic, spacious receptions with a beautiful sweetheart table setup, dance floor, and stage.",
+    },
+    {
+      img: quinceDress,
+      name: "Quinceañeras",
+      es: "Quinceañeras",
+      desc: "Make her dream debut unforgettable. Late-night friendly so the celebration never has to end early.",
+    },
+    {
+      img: partyLights,
+      name: "Sweet Sixteens & Birthdays",
+      es: "Cumpleaños y Sweet Sixteen",
+      desc: "Bring the disco lights — our chandeliers and uplighting create the perfect party vibe.",
+    },
+    {
+      img: aliceCake,
+      name: "Themed Parties",
+      es: "Fiestas temáticas",
+      desc: "From Alice in Wonderland to whatever you can dream up — our space transforms beautifully.",
+    },
+    {
+      img: holidayParty,
+      name: "Holiday & Family Gatherings",
+      es: "Fiestas familiares",
+      desc: "Christmas parties, reunions, baby showers — anywhere you want to gather your favorite people.",
+    },
+    {
+      img: banquet,
+      name: "Corporate & Banquets",
+      es: "Eventos corporativos",
+      desc: "Meetings, banquets, and company celebrations comfortably hosting up to 150 guests.",
+    },
   ];
 
   return (
