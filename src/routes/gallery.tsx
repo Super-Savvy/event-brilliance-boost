@@ -1,27 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
-import hero from "@/assets/hero-ballroom.jpg";
-import wedding from "@/assets/event-wedding.jpg";
-import quince from "@/assets/event-quince.jpg";
-import birthday from "@/assets/event-birthday.jpg";
-import corporate from "@/assets/event-corporate.jpg";
-import baptism from "@/assets/event-baptism.jpg";
-import sweet16 from "@/assets/event-sweet16.jpg";
-import empty from "@/assets/gallery-empty.jpg";
+import partyLights from "@/assets/real-party-lights.jpg";
+import holidayParty from "@/assets/real-holiday-party.jpg";
+import sweetheart from "@/assets/real-sweetheart-table.jpg";
+import quinceDress from "@/assets/real-quince-dress.jpg";
+import aliceDecor from "@/assets/real-alice-decor.jpg";
+import aliceCake from "@/assets/real-alice-cake.jpg";
+import cookies from "@/assets/real-cookies-alice.jpg";
+import treats from "@/assets/real-treats-pretzels.jpg";
+import banquet from "@/assets/real-banquet-guests.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Photos of Our Ballroom | Mesquite Event Center" },
+      { title: "Gallery — Real Events at Mesquite Event Center" },
       {
         name: "description",
         content:
-          "See photos of weddings, quinceañeras, birthdays and more at Mesquite Event Center — a beautiful event venue in Mesquite, TX.",
+          "Real photos from quinceañeras, weddings, birthdays, and themed parties hosted at Mesquite Event Center in Mesquite, TX.",
       },
       { property: "og:title", content: "Gallery | Mesquite Event Center" },
-      { property: "og:description", content: "Photos of our beautiful Mesquite ballroom in action." },
-      { property: "og:image", content: hero },
-      { name: "twitter:image", content: hero },
+      { property: "og:description", content: "Real photos from real celebrations at our Mesquite ballroom." },
+      { property: "og:image", content: sweetheart },
+      { name: "twitter:image", content: sweetheart },
     ],
   }),
   component: GalleryPage,
@@ -30,14 +31,15 @@ export const Route = createFileRoute("/gallery")({
 function GalleryPage() {
   const { t } = useI18n();
   const photos = [
-    { src: hero, alt: "Ballroom set with round tables and chandeliers", span: "md:col-span-2 md:row-span-2" },
-    { src: quince, alt: "Quinceañera setup with pink and gold balloon arch" },
-    { src: wedding, alt: "Wedding reception with floral centerpieces" },
-    { src: sweet16, alt: "Sweet 16 with balloon backdrop" },
-    { src: birthday, alt: "Birthday party with colorful balloons" },
-    { src: empty, alt: "Empty ballroom ready to be decorated", span: "md:col-span-2" },
-    { src: baptism, alt: "Baptism table setting" },
-    { src: corporate, alt: "Corporate banquet seating" },
+    { src: sweetheart, alt: "Sweetheart table with pink florals", span: "md:col-span-2 md:row-span-2" },
+    { src: quinceDress, alt: "Quinceañera in pink ball gown" },
+    { src: partyLights, alt: "Ballroom with colorful uplighting and chandeliers" },
+    { src: aliceCake, alt: "Alice in Wonderland themed cake and dessert table" },
+    { src: holidayParty, alt: "Holiday-themed party with balloon arch", span: "md:col-span-2" },
+    { src: aliceDecor, alt: "Themed party wall decorations" },
+    { src: cookies, alt: "Custom decorated cookies" },
+    { src: treats, alt: "Themed dessert details" },
+    { src: banquet, alt: "Guests enjoying a banquet event", span: "md:col-span-2" },
   ];
 
   return (
@@ -49,10 +51,7 @@ function GalleryPage() {
 
       <div className="mt-12 grid auto-rows-[220px] grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
         {photos.map((p, i) => (
-          <div
-            key={i}
-            className={`group overflow-hidden rounded-2xl shadow-soft ${p.span ?? ""}`}
-          >
+          <div key={i} className={`group overflow-hidden rounded-2xl shadow-soft ${p.span ?? ""}`}>
             <img
               src={p.src}
               alt={p.alt}
