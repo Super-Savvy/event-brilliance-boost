@@ -1,51 +1,118 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { useState } from "react";
+import { MapPin, Phone, Mail, Facebook, Instagram, ArrowRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 export function SiteFooter() {
   const { t } = useI18n();
+  const [email, setEmail] = useState("");
+
   return (
-    <footer className="mt-24 border-t border-border bg-secondary/40">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
-        <div>
-          <h3 className="font-display text-xl font-semibold">
-            Mesquite <span className="text-primary">Event Center</span>
-          </h3>
-          <p className="mt-2 max-w-xs text-sm text-muted-foreground">{t("footer.tag")}</p>
-        </div>
-        <div className="space-y-3 text-sm">
-          <div className="flex items-start gap-2">
-            <MapPin className="mt-0.5 h-4 w-4 text-primary" />
-            <a
-              href="https://maps.google.com/?q=4601+Gus+Thomasson+Rd,+Mesquite,+TX+75150"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary"
+    <footer className="mt-24 bg-foreground text-background">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="grid gap-10 md:grid-cols-12">
+          {/* Brand + newsletter */}
+          <div className="md:col-span-5">
+            <Link to="/" className="flex items-center gap-2">
+              <span className="bg-gradient-gold inline-flex h-10 w-10 items-center justify-center rounded-full font-display text-lg font-bold text-gold-foreground">
+                M
+              </span>
+              <span className="font-display text-xl font-semibold">
+                Mesquite <span className="text-gold">Event Center</span>
+              </span>
+            </Link>
+            <p className="mt-4 max-w-md text-sm text-background/70">{t("footer.tag")}</p>
+
+            <h4 className="mt-8 font-display text-lg font-semibold">{t("footer.newsletter")}</h4>
+            <p className="mt-1 text-sm text-background/70">{t("footer.newsletterSub")}</p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                window.location.href = `mailto:info@mesquiteeventcenter.com?subject=Newsletter%20signup&body=${encodeURIComponent(email)}`;
+              }}
+              className="mt-3 flex overflow-hidden rounded-full bg-background/10 ring-1 ring-background/20"
             >
-              4601 Gus Thomasson Rd, Mesquite, TX 75150
-            </a>
+              <input
+                required
+                type="email"
+                placeholder={t("footer.emailPh")}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-transparent px-4 py-3 text-sm placeholder:text-background/50 focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="flex items-center gap-1 bg-gold px-5 text-sm font-semibold text-gold-foreground transition hover:bg-gold/90"
+              >
+                {t("footer.subscribe")} <ArrowRight className="h-4 w-4" />
+              </button>
+            </form>
           </div>
-          <div className="flex items-center gap-2">
-            <Phone className="h-4 w-4 text-primary" />
-            <a href="tel:+12146999868" className="hover:text-primary">+1 (214) 699-9868</a>
+
+          {/* Menu */}
+          <div className="md:col-span-2">
+            <h4 className="mb-4 font-display text-base font-semibold">{t("footer.menu")}</h4>
+            <ul className="space-y-2 text-sm text-background/75">
+              <li><Link to="/" className="hover:text-gold">{t("nav.home")}</Link></li>
+              <li><Link to="/events" className="hover:text-gold">{t("nav.events")}</Link></li>
+              <li><Link to="/gallery" className="hover:text-gold">{t("nav.gallery")}</Link></li>
+              <li><Link to="/reviews" className="hover:text-gold">{t("nav.reviews")}</Link></li>
+              <li><Link to="/faq" className="hover:text-gold">{t("nav.faq")}</Link></li>
+            </ul>
           </div>
-          <div className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-primary" />
-            <span>{t("contact.hoursValue")}</span>
+
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <h4 className="mb-4 font-display text-base font-semibold">{t("footer.contact")}</h4>
+            <ul className="space-y-3 text-sm text-background/75">
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 flex-none text-gold" />
+                <a
+                  href="https://maps.google.com/?q=4601+Gus+Thomasson+Rd,+Mesquite,+TX+75150"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold"
+                >
+                  4601 Gus Thomasson Rd, Mesquite, TX 75150
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-gold" />
+                <a href="tel:+12146999868" className="hover:text-gold">+1 (214) 699-9868</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-gold" />
+                <a href="mailto:info@mesquiteeventcenter.com" className="hover:text-gold">
+                  info@mesquiteeventcenter.com
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div className="text-sm">
-          <h4 className="mb-3 font-semibold">Explore</h4>
-          <ul className="grid grid-cols-2 gap-2">
-            <li><Link to="/events" className="hover:text-primary">{t("nav.events")}</Link></li>
-            <li><Link to="/gallery" className="hover:text-primary">{t("nav.gallery")}</Link></li>
-            <li><Link to="/reviews" className="hover:text-primary">{t("nav.reviews")}</Link></li>
-            <li><Link to="/faq" className="hover:text-primary">{t("nav.faq")}</Link></li>
-            <li><Link to="/contact" className="hover:text-primary">{t("nav.contact")}</Link></li>
-          </ul>
+
+          {/* Follow */}
+          <div className="md:col-span-2">
+            <h4 className="mb-4 font-display text-base font-semibold">{t("footer.follow")}</h4>
+            <div className="flex gap-2">
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-background/10 transition hover:bg-gold hover:text-gold-foreground"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-background/10 transition hover:bg-gold hover:text-gold-foreground"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">
+
+      <div className="border-t border-background/10 py-5 text-center text-xs text-background/60">
         © {new Date().getFullYear()} Mesquite Event Center. {t("footer.rights")}
       </div>
     </footer>
