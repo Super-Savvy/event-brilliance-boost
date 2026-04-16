@@ -162,6 +162,33 @@ function Home() {
         </div>
       </section>
 
+      {/* REAL MOMENTS STRIP */}
+      <section className="bg-gradient-soft py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mb-10 flex items-end justify-between gap-6">
+            <div>
+              <h2 className="font-display text-3xl font-semibold sm:text-4xl">Real moments at our venue</h2>
+              <p className="mt-2 text-muted-foreground">A few highlights from recent celebrations.</p>
+            </div>
+            <Link to="/gallery" className="hidden text-sm font-semibold text-primary hover:underline sm:inline">
+              See gallery →
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+            {[alice, holiday, treats, birthday].map((src, i) => (
+              <div key={i} className="aspect-square overflow-hidden rounded-2xl shadow-soft">
+                <img
+                  src={src}
+                  alt="Real event at Mesquite Event Center"
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA STRIP */}
       <section className="px-4 sm:px-6">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl bg-primary p-10 text-primary-foreground shadow-glow sm:p-14">
