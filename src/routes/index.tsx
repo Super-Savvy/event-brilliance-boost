@@ -377,6 +377,7 @@ function ServiceCard({
 function QuickBookForm() {
   const { t } = useI18n();
   const [data, setData] = useState({ name: "", phone: "", date: "", guests: "", type: "" });
+  const [sent, setSent] = useState(false);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -385,6 +386,7 @@ function QuickBookForm() {
       `Name: ${data.name}\nPhone: ${data.phone}\nDate: ${data.date}\nGuests: ${data.guests}\nType: ${data.type}`,
     );
     window.location.href = `mailto:info@mesquiteeventcenter.com?subject=${subject}&body=${body}`;
+    setSent(true);
   };
 
   const input =
@@ -448,6 +450,11 @@ function QuickBookForm() {
       <p className="mt-3 flex items-center justify-center gap-2 text-xs text-white/85">
         <Mail className="h-3.5 w-3.5" /> Same-business-day reply
       </p>
+      {sent && (
+        <p className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-white/15 px-3 py-2 text-xs text-white">
+          <Check className="h-3.5 w-3.5" /> Thanks! Your email app should now open with your request.
+        </p>
+      )}
     </form>
   );
 }
