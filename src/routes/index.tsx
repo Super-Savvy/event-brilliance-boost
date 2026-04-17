@@ -103,7 +103,7 @@ function Home() {
         </div>
 
         {/* Floating contact strip */}
-        <div className="relative mx-auto -mb-10 max-w-6xl px-4 sm:px-6">
+        <div className="relative z-10 mx-auto -mb-16 max-w-6xl px-4 sm:-mb-20 sm:px-6">
           <div className="grid gap-4 rounded-2xl bg-foreground p-5 text-background shadow-glow sm:grid-cols-3 sm:p-6">
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
