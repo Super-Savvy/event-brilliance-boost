@@ -102,33 +102,34 @@ function Home() {
           </div>
         </div>
 
-        {/* Floating contact strip */}
-        <div className="relative z-30 mx-auto -mb-16 max-w-6xl px-4 sm:-mb-20 sm:px-6">
-          <div className="grid gap-4 rounded-2xl bg-foreground p-5 text-background shadow-glow sm:grid-cols-3 sm:p-6">
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
-                <Sparkles className="h-5 w-5" />
-              </span>
-              <p className="text-sm font-medium">{t("strip.tag")}</p>
-            </div>
-            <a href="tel:+12146999868" className="flex items-center gap-3 hover:text-gold">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
-                <Phone className="h-5 w-5" />
-              </span>
-              <span className="text-sm font-medium">+1 (214) 699-9868</span>
-            </a>
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
-                <Clock className="h-5 w-5" />
-              </span>
-              <span className="text-sm font-medium">{t("contact.hoursValue")}</span>
-            </div>
-          </div>
-        </div>
       </section>
 
+      {/* Floating contact strip — sits between hero and intro */}
+      <div className="relative z-30 mx-auto -mt-16 mb-8 max-w-6xl px-4 sm:-mt-20 sm:px-6">
+        <div className="grid gap-4 rounded-2xl bg-foreground p-5 text-background shadow-glow sm:grid-cols-3 sm:p-6">
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+              <Sparkles className="h-5 w-5" />
+            </span>
+            <p className="text-sm font-medium">{t("strip.tag")}</p>
+          </div>
+          <a href="tel:+12146999868" className="flex items-center gap-3 hover:text-gold">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+              <Phone className="h-5 w-5" />
+            </span>
+            <span className="text-sm font-medium">+1 (214) 699-9868</span>
+          </a>
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+              <Clock className="h-5 w-5" />
+            </span>
+            <span className="text-sm font-medium">{t("contact.hoursValue")}</span>
+          </div>
+        </div>
+      </div>
+
       {/* INTRO 1 — text + image */}
-      <section className="pt-28 pb-20">
+      <section className="pt-12 pb-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-2 md:items-center">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
