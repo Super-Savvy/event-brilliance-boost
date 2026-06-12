@@ -61,6 +61,13 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Mesquite Event Center" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Mesquite Event Center | Event Venue in Mesquite, TX" },
+      { name: "twitter:title", content: "Mesquite Event Center | Event Venue in Mesquite, TX" },
+      { name: "description", content: "Event Brilliance Boost is a bilingual website designed to increase sales and Google rankings for event venues." },
+      { property: "og:description", content: "Event Brilliance Boost is a bilingual website designed to increase sales and Google rankings for event venues." },
+      { name: "twitter:description", content: "Event Brilliance Boost is a bilingual website designed to increase sales and Google rankings for event venues." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4e5c108-5d23-4201-bf0e-b07429f06a26/id-preview-f1fc7304--d77cafc2-d4db-4fea-aa38-3f9b8c3c6cf3.lovable.app-1776471064485.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4e5c108-5d23-4201-bf0e-b07429f06a26/id-preview-f1fc7304--d77cafc2-d4db-4fea-aa38-3f9b8c3c6cf3.lovable.app-1776471064485.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
